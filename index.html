@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/home_page.css">
     <link rel="stylesheet" href="styles/adddata.css">
     <link rel="stylesheet" href="styles/predictdata.css">
-    <title>Document</title>
+    <title>Digit Recogniser</title>
 </head>
 <body>
     <div id="login-page" style="display: flex;">
@@ -59,7 +59,7 @@
             <p id="err2"></p>
         </div>
         <div>
-            <button class="btn" id="register-btn" onclick="register()">Log in</button>
+            <button class="btn" id="register-btn" onclick="register()">Register</button>
         </div>
     </div>
 
@@ -69,12 +69,14 @@
         </div>
         <div id="btn-box">
             <button class="btn btnh" onclick="predictdata()">Try Writing</button>
-            <button class="btn btnh" onclick="adddata()">Add Data</button>
+            <!-- <button class="btn btnh" onclick="adddata()">Add Data</button> -->
+            <button class="btn btnh" onclick="">Add Data</button>
+
         </div>
     </div>
 
     <div id="adddata" style="display: none;">
-        <div style="display: flex; width: 280px; justify-content: start; margin: 10px;">
+        <div style="position: absolute; left: 0px; top: 0px; display: flex; width: 280px; justify-content: start; margin: 10px;">
             <button style="background-color: transparent; border: none;" onclick="back()"> < back </button>
         </div>
         <div>
@@ -96,7 +98,7 @@
     </div>
 
     <div id="predictdata" style="display: none;">
-        <div style="display: flex; width: 280px; justify-content: start; margin: 10px;">
+        <div style="position: absolute; left: 0px; top: 0px; display: flex; width: 280px; justify-content: start; margin: 10px;">
             <button style="background-color: transparent; border: none;" onclick="backP()"> < back </button>
         </div>
         <div>
@@ -113,12 +115,25 @@
         </div>
     </div>
 
+    <div id="prediction" style="z-index: 3; display: none;">
+        <div id="message-box">
+            <h3 id="mainmsg"></h3>
+            <h5 id="message">x won !</h5>
+            <div>
+                <button id="btn-rst" onclick="restart_button()">Restart</button>
+                <button id="btn-mmm" onclick="mm_button()">Main Menu</button>
+            </div>
+        </div>
+    </div>
+
     <link rel="stylesheet" href="styles/login_page.css">
     <link rel="stylesheet" href="styles/register_page.css">
     <link rel="stylesheet" href="styles/home_page.css">
     <link rel="stylesheet" href="styles/adddata.css">
     <link rel="stylesheet" href="styles/predictdata.css">
+    <link rel="stylesheet" href="styles/message_box.css">
 
+    <script src="logics/animation.js"></script>
     <script src="logics/btn_logic.js"></script>
     <script src="logics/drawing.js"></script>
     <script src="logics/predict.js"></script>

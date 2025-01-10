@@ -35,6 +35,10 @@ pcanvas.addEventListener('touchend', stopDrawingp);
 
 
 async function send_predict_image() {
+
+    document.getElementById('convertButtonP').innerHTML = 'Loading...'
+    // document.getElementById('loading').style.animation = 'an9 0.5s ease-in-out 0s infinite'
+
     const imageData = ctp.getImageData(0, 0, 280, 280);
     console.log(imageData)
     const pixelArray = [];
@@ -86,18 +90,17 @@ async function send_predict_image() {
     })
 
     let response_obj = await response.json()
+
+    // document.getElementById('loading').style.animation = ''
+    document.getElementById('convertButtonP').innerHTML = 'Submit'
+
     if(response_obj['success'] == true) {
-        setErrorMsg(response_obj['value'], 4)
-        setTimeout(() => {
-            setErrorMsg('', 4)
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }, 5000);
+        show_message(response_obj['value'],`confidence: ${response_obj['conf']}%`)
+        console.log(response_obj)
+        // ctp.clearRect(0, 0, pcanvas.width, pcanvas.height);
     }
     else {
-        setErrorMsg('Something went Wrong !!', 4)
-        setTimeout(() => {
-            setErrorMsg('', 4)
-        }, 5000);
+        show_message(response_obj['value'], '')
     }
 }
 

@@ -56,6 +56,8 @@ async function login() {
         'username': username,
         'password': password
     }
+    document.getElementById('login-btn').innerHTML = '<div style="width: 6px; height: 6px;" id="loading"></div>'
+    document.getElementById('loading').style.animation = 'an9 0.5s ease-in-out 0s infinite'
 
     let response = await fetch(url+'login', {
         method: "POST",
@@ -68,10 +70,14 @@ async function login() {
 
     let response_obj = await response.json();
     if(response_obj['success'] == true) {
+        document.getElementById('loading').style.animation = ''
+        document.getElementById('login-btn').innerHTML = 'Log in'
         document.getElementById('login-page').style.display = 'none'
         document.getElementById('home-page').style.display = 'flex'
     }
     else {
+        document.getElementById('loading').style.animation = ''
+        document.getElementById('login-btn').innerHTML = 'Log in'
         setErrorMsg(response_obj['message'])
     }
 }
@@ -81,8 +87,13 @@ async function register() {
     let password = document.getElementById('npassword').value
     let cassword = document.getElementById('cpassword').value
 
+    document.getElementById('register-btn').innerHTML = '<div style="width: 6px; height: 6px;" id="loading"></div>'
+    document.getElementById('loading').style.animation = 'an9 0.5s ease-in-out 0s infinite'
+
     if(password != cassword) {
         setErrorMsg('Passwords DO NOT match', 2)
+        document.getElementById('loading').style.animation = ''
+        document.getElementById('register-btn').innerHTML = 'Register'
     }
     else {
         let req_body = {
@@ -100,8 +111,18 @@ async function register() {
         })
 
         let response_obj = await response.json();
-        if(response_obj['success'] == true) {console.log('succ')}
+        console.log(response_obj)
+        if(response_obj['success'] == true) {
+            console.log('succ')
+            document.getElementById('loading').style.animation = ''
+            document.getElementById('register-btn').innerHTML = 'Register'
+            
+            document.getElementById('register-page').style.display = 'none'
+            document.getElementById('login-page').style.display = 'flex'
+        }
         else {
+            document.getElementById('loading').style.animation = ''
+            document.getElementById('register-btn').innerHTML = 'Register'
             setErrorMsg(response_obj['message'], 2)
         }
     }

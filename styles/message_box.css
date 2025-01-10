@@ -1,0 +1,138 @@
+#prediction {
+    position: absolute;
+    display: none;
+    height: 93vh;
+    width: 100vw;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.534);
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    /* animation: an4 0.8s ease-in-out 0s 1; */
+    
+}
+
+#message-box {
+    display: none;
+    flex-direction: column;
+    width: 90vw;
+    height: 30%;
+    /* border: 1px solid black; */
+    background-color: white;
+    margin: 40px 0px;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    opacity: 1;
+    /* animation: an3 0.8s ease-in-out 0s 1; */
+}
+
+#prediction div {
+    display: flex;
+    width: 90vw;
+    justify-content: space-around;
+}
+
+#prediction h3 {
+    color: red;
+}
+
+#btn-rst {
+    display: flex;
+    background-color: rgb(255, 113, 48);
+    height: 40px;
+    width: 30vw;
+    border-radius: 20px;
+    color: white;
+}
+
+#btn-mmm {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    width: 30vw;
+    border-radius: 20px;
+    border: 2px solid rgb(255, 113, 48);
+    color: rgb(255, 113, 48); 
+}
+
+button {
+    display: flex;
+    height: 75px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 2px;
+}
+
+@keyframes an3 {
+    0%{
+        top: 30%;
+        opacity: 0;
+    }
+    100%{
+        top: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes an4 {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.534);
+    }
+}
+
+@keyframes an5 {
+    0%{
+        top: 0%;
+        opacity: 1;
+    }
+    100%{
+        top: 30%;
+        opacity: 0;
+    }
+}
+
+@keyframes an6 {
+    0% {
+        background-color: rgba(0, 0, 0, 0.534);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+#loading {
+    position: relative;
+    display: flex;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    /* animation: an9 0.8s ease-in-out 0s infinite ; */
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+    z-index: 4;
+}
+@keyframes an9 {
+    0% {
+        left: 0px;
+    }
+    25%{
+        left: 10px;
+    }
+    50%{
+        left: 0px;
+    }
+    75%{
+        left: -10px;
+    }
+    100%{
+        left: 0px;
+    }
+}

@@ -5,6 +5,12 @@
     width: 100vw;
     justify-content: center;
     align-items: center;
+    /* margin: 10px; */
+}
+
+#predictdata div{
+    display: flex;
+    margin: 10px;
 }
 
 #predictdata h4 {
