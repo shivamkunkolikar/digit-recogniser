@@ -1,0 +1,30 @@
+#home-page {
+    display: flex;
+    height: 93vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#btn-box {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+
+}
+
+#home-page h4 {
+    font-size: 20px;
+}
+
+.btnh {
+    display: flex;
+    padding: 10px 30px;
+    width: 250px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px;
+}
+

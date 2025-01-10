@@ -1,0 +1,24 @@
+#register-page{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 100vw;
+    height: 93vh;
+    justify-content: center;
+    align-items: center;
+
+}
+#register-page div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* border: 1px solid black; */
+    margin: 10px;
+    display: flex;
+    width: 300px;
+}
+
+#err2 {
+    font-size: 16px;
+    color: red;
+}

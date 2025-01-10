@@ -1,0 +1,12 @@
+#predictdata {
+    display: flex;
+    flex-direction: column;
+    height: 93vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#predictdata h4 {
+    font-size: 18px;
+}

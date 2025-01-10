@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/login_page.css">
+    <link rel="stylesheet" href="/styles/register_page.css">
+    <link rel="stylesheet" href="/styles/home_page.css">
+    <link rel="stylesheet" href="/styles/adddata.css">
+    <link rel="stylesheet" href="styles/predictdata.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="login-page" style="display: flex;">
+        <div>
+            <h4 style="font-size: 22px;">Sign In</h4>
+            <div style="display: flex; flex-direction: row; margin-left: 0px;">
+                <p>Don't have account?</p>
+                <p style="text-decoration: underline;" id="sign-in-btn"> Sign UP</p>
+            </div>
+        </div>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter Username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password" placeholder="Enter Password">
+        </div>
+        <div>
+            <p id="err"></p>
+        </div>
+        <div>
+            <button class="btn" id="login-btn" onclick="login()">Log in</button>
+        </div>
+    </div>
+
+    <div id="register-page" style="display: none;">
+        <div>
+            <h4 style="font-size: 22px;">Sign Up</h4>
+            <div style="display: flex; flex-direction: row; margin-left: 0px;">
+                <p>Already have account?</p>
+                <p style="text-decoration: underline;" id="sign-up-btn"> Sign IN</p>
+            </div>
+        </div>
+        <div>
+            <label for="nusername">Username</label>
+            <input type="text" name="nusername" id="nusername" placeholder="Enter Username">
+        </div>
+        <div>
+            <label for="npassword">Create assword</label>
+            <input type="text" name="npassword" id="npassword" placeholder="Enter Password">
+        </div>
+        <div>
+            <label for="cpassword">Confirm Password</label>
+            <input type="text" name="cpassword" id="cpassword" placeholder="Re-Enter Password">
+        </div>
+        <div>
+            <p id="err2"></p>
+        </div>
+        <div>
+            <button class="btn" id="register-btn" onclick="register()">Log in</button>
+        </div>
+    </div>
+
+    <div id="home-page" style="display: none;">
+        <div>
+            <h4>Drawing Digit Recogniser</h4>
+        </div>
+        <div id="btn-box">
+            <button class="btn btnh" onclick="predictdata()">Try Writing</button>
+            <button class="btn btnh" onclick="adddata()">Add Data</button>
+        </div>
+    </div>
+
+    <div id="adddata" style="display: none;">
+        <div style="display: flex; width: 280px; justify-content: start; margin: 10px;">
+            <button style="background-color: transparent; border: none;" onclick="back()"> < back </button>
+        </div>
+        <div>
+            <h4>Draw on the Canvas</h4>
+        </div>
+        <canvas id="drawingCanvas" width="280" height="280"></canvas>
+        <div style="display: flex; align-items: center;">
+            <label for="label">Enter number: </label>
+            <input style="display: flex; height: 35px; width: 40px;" type="number" id="labl">
+        </div>
+        <div style="display: flex; align-items: center;">
+            <button id="clearButton" class="btn btnd" style="background-color: white; color: rgb(255, 113, 48); border: 2px solid rgb(255, 113, 48); padding: 18px 48px;">Clear</button>
+            <button id="convertButton" class="btn btnd" onclick="send_image()">Submit</button>
+        </div>
+        <canvas id="drawingC" style="display: flex; height: 28px; width: 28px;" width="28" height="28"></canvas>
+        <div>
+            <p id="err3"></p>
+        </div>
+    </div>
+
+    <div id="predictdata" style="display: none;">
+        <div style="display: flex; width: 280px; justify-content: start; margin: 10px;">
+            <button style="background-color: transparent; border: none;" onclick="backP()"> < back </button>
+        </div>
+        <div>
+            <h4>Draw on the Canvas</h4>
+        </div>
+        <canvas id="predictCanvas" width="280" height="280"></canvas>
+        <div style="display: flex; align-items: center;">
+            <button id="clearButtonP" class="btn btnd" style="background-color: white; color: rgb(255, 113, 48); border: 2px solid rgb(255, 113, 48); padding: 18px 48px;">Clear</button>
+            <button id="convertButtonP" class="btn btnd" onclick="send_predict_image()">Submit</button>
+        </div>
+        <canvas id="drawingP" style="display: flex; height: 28px; width: 28px;" width="28" height="28"></canvas>
+        <div>
+            <p id="err4"></p>
+        </div>
+    </div>
+
+    <script src="logics/btn_logic.js"></script>
+    <script src="logics/drawing.js"></script>
+    <script src="logics/predict.js"></script>
+</body>
+</html>
